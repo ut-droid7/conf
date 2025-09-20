@@ -1,6 +1,6 @@
 import os
 import socket
-
+import configparser
 
 def cli():
     username = os.getlogin()
@@ -33,4 +33,8 @@ def cli():
             print(command + ": command not found")
 
 
-cli()
+#cli()
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+print(config["DEFAULT"]["vfs"])
